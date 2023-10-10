@@ -1,11 +1,29 @@
 $(document).ready(function () {
 
+   
+
     var hidden = false;
     var hidden2 = false;
-    var status = "Undecided"
+    var status = "Undecided";
     var party_size = 0;
-    var bringing = "Undecided"
-    var guest_name = "Undecided"
+    var bringing = "Undecided";
+    var guest_name = "Undecided";
+    var notes = "";
+    var floating = false;
+
+    $('#bat_img').click(function() {
+
+        if (!floating) {
+            $('#bat_img').addClass('floatAround')
+            floating = true;
+        }
+
+        setTimeout(function() {
+            $('#bat_img').removeClass('floatAround')
+            floating = false;
+        }, 10100)
+
+    })
 
     $('#rsvp_button').click(function () {
 
@@ -40,12 +58,14 @@ $(document).ready(function () {
             $('.guest_form').append(rsvp_section)
             $('.guest_form').append(party_size_section)
             $('.guest_form').append(bringing_section)
+            $('.guest_form').append(notes_section)
             $('.guest_form').append(done_section)
 
             // hide the party size, bring, and done
 
             $('.party_size_section').hide();
             $('.bringing_section').hide();
+            $('.notes_section').hide();
             $('.done_section').hide();
             $('#rsvp_res_row').hide();
             $('.jumbotron').slideDown(2000);
@@ -63,6 +83,7 @@ $(document).ready(function () {
                     hidden2 = false;
                     bringing = "Undecided"
                     $('.bring_response').show();
+                    $('.notes_section').hide();
                     $('.done_section').hide();
                 }
             })
@@ -100,9 +121,12 @@ $(document).ready(function () {
                 }
 
                 if (bringing !== "Undecided") {
+                    $('.notes_section').show();
                     $('.done_section').show();
+                    window.scrollTo(0, document.body.scrollHeight);
                     $('#done_btn').text("Done");
                 } else {
+                    $('.notes_section').hide();
                     $('.done_section').hide();
                 }
             });
@@ -119,11 +143,14 @@ $(document).ready(function () {
 
             $('#done_btn').click(function () {
 
+                notes = $('#notes').val();
+
                 var response = {
                     "guest_name": guest_name,
                     "status": status,
                     "party_size": party_size,
-                    "bringing": bringing
+                    "bringing": bringing,
+                    "notes": notes
                 }
 
                 console.log(response)
@@ -139,8 +166,10 @@ $(document).ready(function () {
         if (status === "Going") {
             $('.party_size_section').show();
         } else if (status === "Not Going") {
+            $('.notes_section').show();
             $('.done_section').show();
             $('#done_btn').text("I\'m a bad friend");
+            window.scrollTo(0, document.body.scrollHeight);
         } else {
             $('.party_size_section').hide();
             party_size = 0;
@@ -149,6 +178,7 @@ $(document).ready(function () {
             hidden2 = false;
             bringing = "Undecided"
             $('.bring_response').show();
+            $('.notes_section').hide();
             $('.done_section').hide();
         }
     }
@@ -157,6 +187,11 @@ $(document).ready(function () {
         // send data to database
         // page fades away
         $('.jumbotron').fadeOut(5000);
+        $('.container-fluid').css({
+            "height" : "100vh"
+        })
+
+        window.scrollTo(0, 0);
 
         setTimeout(function() {
             $('.jumbotron').empty();
@@ -164,27 +199,49 @@ $(document).ready(function () {
                 $('.jumbotron').append(big_bat(guest_name));
                 $('.jumbotron').fadeIn(5000);
             } else {
+                $('.jumbotron').css({
+                    "background-color" : "black"
+                })
+                $('body').css({
+                    "overflow" : "hidden"
+                })
                 $('.jumbotron').append(`<img src="clown.jpg" alt="" class="spooky3"></img>`);
                 $('.jumbotron').show();
-                setTimeout(function() {$('.jumbotron').hide();}, 500)
+                setTimeout(function() {
+                    $('.jumbotron').html(happy_halloween);
+                }, 600)
             }
             
         }, 5100)
     }
+
+    var jon_and_nikki = new Image();
+    jon_and_nikki.src = 'jon_and_nikki.png';
+
+    jon_and_nikki.onload = function() {
+        console.log('Image preloaded');
+    };
 
     function big_bat(guest_name) {
         return (`
             <div class="header">
                 <h2 class="display-3">See you sooooooon, ${guest_name}</h2>
             </div>
-            <img src="jon_and_nikki.png" alt="" class="bat">
+            <img src="${jon_and_nikki.src}" alt="" class="bat">
             <div class="details">
                 <p>Date: October 28th, 2023</p>
                 <p>Time: 6:00 PM</p>
                 <p>Location: 24 SUNLIGHT LANE, BAILEY CO, 80241</p>
             </div>
+            <a class="remove_font">Get regular font</a>
         `)
     }
+
+    const happy_halloween = (`
+        <div class="header">
+            <h2 id="happy_halloween" class="display-3">Happy Halloween</h2>
+        </div>
+    `)
 
     const guest_form_header = (`
         <div class="header">
@@ -250,10 +307,30 @@ $(document).ready(function () {
         </div>
     `)
 
+    const notes_section = (`
+        <div class="notes_section">
+            <div class="sub-header">
+                <h4 class="display-4">Notes</h4>
+            </div>
+            <div class="form-group">
+                <textarea type="text" class="form-control center" id="notes" name="notes" placeholder="Notes to host (Optional)"></textarea>
+            </div>
+        </div>
+    `)
+
     const done_section = (`
         <div class="done_section">
             <button id="done_btn" class="btn btn-dark">Done</button>
         </div>
     `)
+
+    $(document).on('click', '.remove_font', function() {
+        $('.remove_font').remove();
+        $('.details').css({
+            "font-family" : "sans-serif",
+            "font-size" : "1rem",
+            "font-weight" : "bold"
+        });
+    });
 });
 

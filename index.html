@@ -11,63 +11,6 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<style>
-    @keyframes flyBats {
-        0% {
-            transform: translate(0%, 1000%)
-                /* Start position outside the left edge */
-        }
-
-        100% {
-            transform: translate(0%, -5000%)
-                /* End position outside the right edge */
-        }
-    }
-
-    .fricken_bats {
-        width: 50px;
-        height: 30px;
-        background-image: url('bat_img-removebg-preview.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        position: absolute;
-        display: none;
-        /* top: 50%;
-        left: -50px; */
-        /* animation: flyBats 5s linear 1 forwards; */
-    }
-
-    /* Style for the red and green checkboxes */
-
-    form button {
-        width: 100%;
-        padding-top: 10% !important;
-        padding-bottom: 10% !important;
-    }
-
-    .form-group {
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-
-    form .row {
-        margin-bottom: 10%;
-    }
-
-    .center {
-        text-align: center;
-    }
-
-    .done_section {
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-
-    #done_btn {
-        animation: glow 2s ease-in-out infinite;
-    }
-</style>
-
 <body>
     <div class="container-fluid">
         <div class="jumbotron text-center">
@@ -83,8 +26,9 @@
                 <p>Time: 6:00 PM</p>
                 <p>Location: 24 SUNLIGHT LANE, BAILEY CO, 80241</p>
             </div>
+            <a class="remove_font">Get regular font</a>
             <div class="col-12" id="bat-div">
-                <img src="bat_img-removebg-preview.png" alt="" class="bat">
+                <img src="bat_img-removebg-preview.png" alt="" id="bat_img" class="bat">
                 <button class="btn btn-danger" id="rsvp_button">RSVP</button>
             </div>
         </div>
@@ -140,6 +84,15 @@
                         <div class="col-5">
                             <button data-bring="Drink" class="btn bring_response btn-primary">Beverages</button>
                         </div>
+                    </div>
+                </div>
+                
+                <div class="notes_section">
+                    <div class="sub-header">
+                        <h4 class="display-4">Notes</h4>
+                    </div>
+                    <div class="form-group">
+                        <textarea type="text" class="form-control center" id="notes" name="notes" placeholder="Notes to host (Optional)"></textarea>
                     </div>
                 </div>
 
