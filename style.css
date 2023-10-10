@@ -28,6 +28,18 @@ body {
          1px  1px 0 #000; /* Bottom-right shadow */
 }
 
+.loading_screen {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.7);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-family: 'cute-halloween';
+}
+
 .jumbotron {
     height: 100%;
     margin: 0;

@@ -145,7 +145,7 @@ $(document).ready(function () {
 
                 notes = $('#notes').val();
 
-                var response = {
+                var guest_object = {
                     "guest_name": guest_name,
                     "status": status,
                     "party_size": party_size,
@@ -153,9 +153,9 @@ $(document).ready(function () {
                     "notes": notes
                 }
 
-                console.log(response)
+                add_guest(guest_object, successful_submission, failed_submission, loading)
 
-                done(status);
+                console.log(guest_object)
             })
 
         }, 2100)
@@ -183,13 +183,16 @@ $(document).ready(function () {
         }
     }
 
-    function done(status) {
-        // send data to database
-        // page fades away
-        $('.jumbotron').fadeOut(2000);
-        $('.container-fluid').css({
-            "height" : "100vh"
+    function successful_submission(status) {
+
+        $('.loading_screen').hide();
+        $('body').css({
+            "overflow" : "unset"
         })
+        $('.jumbotron').fadeOut(2000);
+        // $('.container-fluid').css({
+        //     "height" : "100vh"
+        // })
 
         window.scrollTo(0, 0);
 
@@ -213,6 +216,17 @@ $(document).ready(function () {
             }
             
         }, 3100)
+    }
+
+    function failed_submission() {
+        alert("There was an error submitting your RSVP. Please ensure you are connected to a network. Try reloading the page if this persists")
+    }
+
+    function loading() {
+        $('body').append(loading_screen)
+        $('body').css({
+            "overflow" : "hidden"
+        })
     }
 
     var jon_and_nikki = new Image();
@@ -321,6 +335,12 @@ $(document).ready(function () {
     const done_section = (`
         <div class="done_section">
             <button id="done_btn" class="btn btn-dark">Submit</button>
+        </div>
+    `)
+
+    const loading_screen = (`
+        <div class="loading_screen">
+            <h2 class="display-3">Sending...</h2>
         </div>
     `)
 
