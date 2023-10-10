@@ -16,22 +16,16 @@ body {
     background-color: #000;
     color: #fff;
     margin: 0 10%;
-    overflow: hidden;
-    /* font-family: 'cute-monster';
-    font-family: 'cute-halloween-italic'; */
-
 }
 
 .jumbotron {
-    height: 100vh;
+    height: 100%;
     margin: 0;
     padding: 0;
     max-width: 100%;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
     background-color: orange;
     color: #fff;
+    padding-bottom: 20%;
 }
 
 .header {
