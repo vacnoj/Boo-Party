@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikki's Spooky 32nd Halloween Party</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/CuteMonster-lg6AD.ttf">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<style>
+
+    @media (max-width: 768px) {
+
+        .container-fluid {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .header {
+            padding: 20px;
+        }
+
+        #rsvp_button {
+            font-size: 1.5rem;
+        }
+
+        .display-3, .display-4 {
+            font-size: 1.5rem;
+        }
+    }
+
+</style>
+
+<body>
+    <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <div class="header">
+                <h2 class="display-3">Nikki's Spooky 32nd</h2>
+            </div>
+            <div class="sub-header">
+                <h4 class="display-4">Booooooo's Theme</h4>
+            </div>
+            <div class="details">
+                <h5 class="margin_bottom_5">Join us for a <span id="haunting">hauntingly</span> good time!</h5>
+                <p>Date: October 28th, 2023</p>
+                <p>Time: 6:00 PM</p>
+                <p>Location: 24 SUNLIGHT LANE, BAILEY CO, 80241</p>
+            </div>
+            <div class="col-12" id="bat-div">
+                <img src="bat_img-removebg-preview.png" alt="" class="bat">
+                <button class="btn btn-danger" id="rsvp_button">RSVP</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to Bootstrap JS and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

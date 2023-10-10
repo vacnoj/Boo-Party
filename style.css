@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'cute-monster';
+    src: url('fonts/CuteMonster-lg6AD.ttf');
+}
+
+@font-face {
+    font-family: 'cute-halloween';
+    src: url('fonts/HalloweenGuises-ZVmVJ.ttf');
+}
+@font-face {
+    font-family: 'cute-halloween-italic';
+    src: url('fonts/HalloweenGuisesItalic-EaAa4.ttf');
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    margin: 0 10%;
+    overflow: hidden;
+    /* font-family: 'cute-monster';
+    font-family: 'cute-halloween-italic'; */
+
+}
+
+.jumbotron {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    background-color: orange;
+    color: #fff;
+}
+
+.header {
+    padding: 5%;
+    font-family: 'cute-halloween';
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    font-family: 'cute-halloween';
+}
+
+.sub-header {
+    font-family: 'cute-halloween';
+}
+
+.margin_bottom_5 {
+    margin-bottom: 5%;
+}
+
+.bat {
+    max-width: 70%;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+}
+
+@keyframes rotateBackAndForth {
+    0% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+
+@keyframes spooky {
+    0% {
+        
+        color: #fff;
+    }
+    50% {
+        color: transparent;
+    }
+    100% {
+        color: #fff;
+    }
+}
+@keyframes spooky2 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes floatAround {
+    0% {
+        transform: translate(0, 0); 
+    }
+    12.5% {
+        transform: translate(-50%, 10%); 
+    }
+    25% {
+        transform: translate(-100%, -10%); 
+    }
+    37.5% {
+        transform: translate(-50%, 10%); 
+    }
+    50% {
+        transform: translate(0%, -10%); 
+    }
+    62.5% {
+        transform: translate(50%, 10%); 
+    }
+    75% {
+        transform: translate(100%, -10%); 
+    }
+    87.5% {
+        transform: translate(50%, 10%); 
+    }
+    100% {
+        transform: translate(0, 0); 
+    }
+}
+
+#rsvp_button {
+    font-family: 'cute-halloween';
+    font-size: 2rem;
+    display: block;
+    animation: spooky2 2s infinite;
+    margin: auto;
+}
+
+/* .floatAround {
+    animation: floatAround 10s linear infinite;
+} */
+
+.sub-header {
+    animation: rotateBackAndForth 2s ease-in-out infinite; 
+}
+
+#haunting {
+    animation: spooky 5s ease-in-out infinite;
+}
+
