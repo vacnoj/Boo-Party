@@ -14,6 +14,7 @@
 
 body {
     background-color: #000;
+    min-height: 100vh;
     color: #fff;
     margin: 0 10%;
     text-shadow: 
@@ -54,12 +55,22 @@ body {
 .margin_bottom_5 {
     margin-bottom: 5%;
 }
+.margin_bottom_10 {
+    margin-bottom: 10%;
+}
 
 .bat {
     max-width: 70%;
     cursor: pointer;
     display: block;
     margin: auto;
+}
+
+#rsvp_info_row {
+    font-family: fantasy;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1rem;
 }
 
 @keyframes rotateBackAndForth {
@@ -103,6 +114,29 @@ body {
         transform: scale(1);
     }
 }
+@keyframes spooky3 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(5);
+    }
+    100% {
+        transform: scale(10);
+    }
+}
+
+@keyframes glow {
+    0% {
+        background-color: #343a40;
+    }
+    50% {
+        background-color: #595a5c;
+    }
+    100% {
+        background-color: #343a40;
+    }
+}
 
 @keyframes floatAround {
     0% {
@@ -134,7 +168,7 @@ body {
     }
 }
 
-#rsvp_button {
+#rsvp_button, #done_btn {
     font-family: 'cute-halloween';
     font-size: 2rem;
     display: block;
@@ -159,3 +193,31 @@ body {
     animation: spooky 5s ease-in-out infinite;
 }
 
+.spooky3 {
+    animation: spooky3 .5s linear forwards;
+}
+
+@media (max-width: 768px) {
+
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .details {
+        margin-top: 20%;
+        font-size: .75rem;
+    }
+
+    .header {
+        padding: 20px;
+    }
+
+    #rsvp_button {
+        font-size: 1.5rem;
+    }
+
+    .display-3, .display-4 {
+        font-size: 1.5rem;
+    }
+}

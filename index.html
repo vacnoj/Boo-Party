@@ -12,32 +12,60 @@
 </head>
 
 <style>
-
-    @media (max-width: 768px) {
-
-        .container-fluid {
-            padding-left: 0;
-            padding-right: 0;
+    @keyframes flyBats {
+        0% {
+            transform: translate(0%, 1000%)
+                /* Start position outside the left edge */
         }
 
-        .details {
-            margin-top: 20%;
-            font-size: .75rem;
-        }
-
-        .header {
-            padding: 20px;
-        }
-
-        #rsvp_button {
-            font-size: 1.5rem;
-        }
-
-        .display-3, .display-4 {
-            font-size: 1.5rem;
+        100% {
+            transform: translate(0%, -5000%)
+                /* End position outside the right edge */
         }
     }
 
+    .fricken_bats {
+        width: 50px;
+        height: 30px;
+        background-image: url('bat_img-removebg-preview.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        display: none;
+        /* top: 50%;
+        left: -50px; */
+        /* animation: flyBats 5s linear 1 forwards; */
+    }
+
+    /* Style for the red and green checkboxes */
+
+    form button {
+        width: 100%;
+        padding-top: 10% !important;
+        padding-bottom: 10% !important;
+    }
+
+    .form-group {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    form .row {
+        margin-bottom: 10%;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    .done_section {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #done_btn {
+        animation: glow 2s ease-in-out infinite;
+    }
 </style>
 
 <body>
@@ -62,11 +90,113 @@
         </div>
     </div>
 
-    <!-- Link to Bootstrap JS and jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <div class="header">
+                <h2 class="display-3">RSVP Form</h2>
+            </div>
+
+            <div class="row" id="rsvp_info_row">
+                <p>We are having a <span id="cp">costume party</span> to celebrate Nikki's 32nd birthday!</p>
+                <p>Following the theme of <span id="boo">Booooooo's</span>, please bring your favorite spooky food or
+                    beverage and get creative with it!</p>
+            </div>
+
+            <form class="guest_form">
+                <div class="rsvp_section">
+                    <div class="sub-header">
+                        <h4 class="display-4">Your Name</h4>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control center" id="guest" name="name" placeholder="Name">
+                    </div>
+                    <div id="rsvp_res_row" class="row rsvp_row">
+                        <div class="col-5 offset-1">
+                            <button data-status="Going" class="btn rsvp_response btn-success">Going</button>
+                        </div>
+                        <div class="col-5">
+                            <button data-status="Not Going" class="btn rsvp_response btn-danger">Not Going</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="party_size_section">
+                    <div class="sub-header">
+                        <h4 class="display-4">Party Size</h4>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control center" id="guest_count" name="guest_count">
+                    </div>
+                </div>
+
+                <div class="bringing_section">
+                    <div class="sub-header">
+                        <h4 class="display-4">Bringing</h4>
+                    </div>
+                    <div id="bring_res_row" class="row bring_row">
+                        <div class="col-5 offset-1">
+                            <button data-bring="Food" class="btn bring_response btn-primary">Snacks</button>
+                        </div>
+                        <div class="col-5">
+                            <button data-bring="Drink" class="btn bring_response btn-primary">Beverages</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="done_section">
+                    <button class="btn btn-dark">Done</button>
+                </div>
+            </form>
+        </div>
+    </div> -->
+
+
+    <!-- Link to Bootstrap JS and jQuery (if needed) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="script.js"></script>
+</body>
+
+</html>
+
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+<div class="fricken_bats"></div>
+
+<!-- Link to Bootstrap JS and jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
 </body>
 
 </html>
