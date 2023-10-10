@@ -16,6 +16,11 @@ body {
     background-color: #000;
     color: #fff;
     margin: 0 10%;
+    text-shadow: 
+        -1px -1px 0 #000, /* Top-left shadow */
+         1px -1px 0 #000, /* Top-right shadow */
+        -1px  1px 0 #000, /* Bottom-left shadow */
+         1px  1px 0 #000; /* Bottom-right shadow */
 }
 
 .jumbotron {
@@ -76,7 +81,12 @@ body {
         color: #fff;
     }
     50% {
-        color: transparent;
+        color: orange;
+        text-shadow: 
+        -1px -1px 0 orange, /* Top-left shadow */
+         1px -1px 0 orange, /* Top-right shadow */
+        -1px  1px 0 orange, /* Bottom-left shadow */
+         1px  1px 0 orange; /* Bottom-right shadow */
     }
     100% {
         color: #fff;
@@ -130,6 +140,11 @@ body {
     display: block;
     animation: spooky2 2s infinite;
     margin: auto;
+    text-shadow: 
+        -1px -1px 0 #000, /* Top-left shadow */
+         1px -1px 0 #000, /* Top-right shadow */
+        -1px  1px 0 #000, /* Bottom-left shadow */
+         1px  1px 0 #000; /* Bottom-right shadow */
 }
 
 /* .floatAround {
