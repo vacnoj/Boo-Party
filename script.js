@@ -124,7 +124,7 @@ $(document).ready(function () {
                     $('.notes_section').show();
                     $('.done_section').show();
                     window.scrollTo(0, document.body.scrollHeight);
-                    $('#done_btn').text("Done");
+                    $('#done_btn').text("Submit");
                 } else {
                     $('.notes_section').hide();
                     $('.done_section').hide();
@@ -168,7 +168,7 @@ $(document).ready(function () {
         } else if (status === "Not Going") {
             $('.notes_section').show();
             $('.done_section').show();
-            $('#done_btn').text("I\'m a bad friend");
+            $('#done_btn').text("Submit");
             window.scrollTo(0, document.body.scrollHeight);
         } else {
             $('.party_size_section').hide();
@@ -186,7 +186,7 @@ $(document).ready(function () {
     function done(status) {
         // send data to database
         // page fades away
-        $('.jumbotron').fadeOut(5000);
+        $('.jumbotron').fadeOut(2000);
         $('.container-fluid').css({
             "height" : "100vh"
         })
@@ -197,7 +197,7 @@ $(document).ready(function () {
             $('.jumbotron').empty();
             if (status === "Going") {
                 $('.jumbotron').append(big_bat(guest_name));
-                $('.jumbotron').fadeIn(5000);
+                $('.jumbotron').fadeIn(2000);
             } else {
                 $('.jumbotron').css({
                     "background-color" : "black"
@@ -212,7 +212,7 @@ $(document).ready(function () {
                 }, 600)
             }
             
-        }, 5100)
+        }, 3100)
     }
 
     var jon_and_nikki = new Image();
@@ -320,7 +320,7 @@ $(document).ready(function () {
 
     const done_section = (`
         <div class="done_section">
-            <button id="done_btn" class="btn btn-dark">Done</button>
+            <button id="done_btn" class="btn btn-dark">Submit</button>
         </div>
     `)
 
