@@ -67,10 +67,11 @@ body {
 }
 
 #rsvp_info_row {
-    font-family: fantasy;
+    font-family: sans-serif;
     margin-left: 0;
     margin-right: 0;
     font-size: 1rem;
+    font-weight: bold;
 }
 
 @keyframes rotateBackAndForth {
