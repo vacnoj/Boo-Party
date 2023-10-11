@@ -27,6 +27,8 @@ $(document).ready(function () {
 
     $('#rsvp_button').click(function () {
 
+        window.scrollTo(0, 0);
+
         const fricken_bats = document.querySelectorAll('.fricken_bats');
 
         fricken_bats.forEach(bat => {
