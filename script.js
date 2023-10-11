@@ -243,9 +243,9 @@ $(document).ready(function () {
             </div>
             <img src="${jon_and_nikki.src}" alt="" class="bat">
             <div class="details">
-                <p>Date: October 28th, 2023</p>
-                <p>Time: 6:00 PM</p>
-                <p>Location: 24 SUNLIGHT LANE, BAILEY CO, 80241</p>
+                <p>Date: <span class="num_font">Saturday October 28th 2023</span></p>
+                <p>Time: <span class="num_font">6:00 PM</span></p>
+                <p>Location: <span class="num_font">24 SUNLIGHT LANE, BAILEY CO, 80241</span></p>
             </div>
             <a class="remove_font">Get regular font</a>
         `)
@@ -347,6 +347,11 @@ $(document).ready(function () {
     $(document).on('click', '.remove_font', function() {
         $('.remove_font').remove();
         $('.details').css({
+            "font-family" : "sans-serif",
+            "font-size" : "1rem",
+            "font-weight" : "bold"
+        });
+        $('.num_font').css({
             "font-family" : "sans-serif",
             "font-size" : "1rem",
             "font-weight" : "bold"
