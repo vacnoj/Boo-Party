@@ -9,7 +9,7 @@ jobs:
 
       - name: Use Firebase API Key
         env:
-          FIREBASE_API_KEY: ${{ secrets.FIREBASE_KEY }}
+          FIREBASE_KEY: ${{ secrets.FIREBASE_KEY }}
         run: |
           # You can now access the secret as an environment variable
           echo "My Firebase API Key is: $FIREBASE_API_KEY"
