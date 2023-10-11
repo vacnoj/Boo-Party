@@ -15,6 +15,14 @@
     font-family: 'scary-halloween';
     src: url('fonts/NightmareStory-BWV8V.ttf');
 }
+@font-face {
+    font-family: 'spider-font';
+    src: url('fonts/SecretMidnight-518n8.otf');
+}
+
+.num_font {
+    font-family: 'cute-monster';
+}
 
 body {
     background-color: #000;
