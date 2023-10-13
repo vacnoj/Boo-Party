@@ -35,133 +35,65 @@
         </div>
     </div>
 
-    <!-- <div class="container-fluid">
-        <div class="jumbotron text-center">
-            <div class="header">
-                <h2 class="display-3">RSVP Form</h2>
-            </div>
-
-            <div class="row" id="rsvp_info_row">
-                <p>We are having a <span id="cp">costume party</span> to celebrate Nikki's 32nd birthday!</p>
-                <p>Following the theme of <span id="boo">Booooooo's</span>, please bring your favorite spooky food or
-                    beverage and get creative with it!</p>
-            </div>
-
-            <form class="guest_form">
-                <div class="rsvp_section">
-                    <div class="sub-header">
-                        <h4 class="display-4">Your Name</h4>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control center" id="guest" name="name" placeholder="Name">
-                    </div>
-                    <div id="rsvp_res_row" class="row rsvp_row">
-                        <div class="col-5 offset-1">
-                            <button data-status="Going" class="btn rsvp_response btn-success">Going</button>
-                        </div>
-                        <div class="col-5">
-                            <button data-status="Not Going" class="btn rsvp_response btn-danger">Not Going</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="party_size_section">
-                    <div class="sub-header">
-                        <h4 class="display-4">Party Size</h4>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" class="form-control center" id="guest_count" name="guest_count">
-                    </div>
-                </div>
-
-                <div class="bringing_section">
-                    <div class="sub-header">
-                        <h4 class="display-4">Bringing</h4>
-                    </div>
-                    <div id="bring_res_row" class="row bring_row">
-                        <div class="col-5 offset-1">
-                            <button data-bring="Food" class="btn bring_response btn-primary">Snacks</button>
-                        </div>
-                        <div class="col-5">
-                            <button data-bring="Drink" class="btn bring_response btn-primary">Beverages</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="notes_section">
-                    <div class="sub-header">
-                        <h4 class="display-4">Notes</h4>
-                    </div>
-                    <div class="form-group">
-                        <textarea type="text" class="form-control center" id="notes" name="notes" placeholder="Notes to host (Optional)"></textarea>
-                    </div>
-                </div>
-
-                <div class="done_section">
-                    <button class="btn btn-dark">Done</button>
-                </div>
-            </form>
+    <div class="modal" id="guest_table_modal">
+        <div class="modal-dialog">
+          <div id="guest_table_modal_content" class="modal-content">
+            <table id="guest_table" class="table table-dark">
+                <thead id="guest_table_header"></thead>
+                <tbody id="guest_table_data"></tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
-    </div> -->
-
-    <!-- <div class="loading_screen">
-        Sending... 
-    </div> -->
+      </div>
 
 
-    <!-- Link to Bootstrap JS and jQuery (if needed) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+    <div class="fricken_bats"></div>
+
+    <!-- Link to Bootstrap JS and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+    <script src="script.js"></script>
 
-</html>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
-<div class="fricken_bats"></div>
+    <script src="server.js"></script>
 
-<!-- Link to Bootstrap JS and jQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="script.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
-
-
-<script src="server.js"></script>
-  
 </body>
 
 </html>

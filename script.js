@@ -1,6 +1,22 @@
 $(document).ready(function () {
 
-   
+    const pumpkin = (`<i id="pumpkin"><img src="pumpkin_icon.ico" alt="Your Icon"></i>`)
+
+    $('.jumbotron').prepend(pumpkin);
+
+    $('#pumpkin img').on('mousedown', function () {
+
+        tapHoldTimer = setTimeout(function () {
+
+            display_guests();
+
+        }, 5000);
+    });
+
+    $('#pumpkin img').on('mouseup', function () {
+        clearTimeout(tapHoldTimer);
+    });
+
 
     var hidden = false;
     var hidden2 = false;
@@ -10,15 +26,16 @@ $(document).ready(function () {
     var guest_name = "Undecided";
     var notes = "";
     var floating = false;
+    var pulled_guests = false;
 
-    $('#bat_img').click(function() {
+    $('#bat_img').click(function () {
 
         if (!floating) {
             $('#bat_img').addClass('floatAround')
             floating = true;
         }
 
-        setTimeout(function() {
+        setTimeout(function () {
             $('#bat_img').removeClass('floatAround')
             floating = false;
         }, 10100)
@@ -50,6 +67,8 @@ $(document).ready(function () {
         });
 
         $('.jumbotron').slideUp(2000);
+
+
 
         setTimeout(function () {
 
@@ -156,8 +175,7 @@ $(document).ready(function () {
                 }
 
                 add_guest(guest_object, successful_submission, failed_submission, loading)
-
-                console.log(guest_object)
+                
             })
 
         }, 2100)
@@ -189,7 +207,7 @@ $(document).ready(function () {
 
         $('.loading_screen').hide();
         $('body').css({
-            "overflow" : "unset"
+            "overflow": "unset"
         })
         $('.jumbotron').fadeOut(2000);
         // $('.container-fluid').css({
@@ -198,25 +216,25 @@ $(document).ready(function () {
 
         window.scrollTo(0, 0);
 
-        setTimeout(function() {
+        setTimeout(function () {
             $('.jumbotron').empty();
             if (status === "Going") {
                 $('.jumbotron').append(big_bat(guest_name));
                 $('.jumbotron').fadeIn(2000);
             } else {
                 $('.jumbotron').css({
-                    "background-color" : "black"
+                    "background-color": "black"
                 })
                 $('body').css({
-                    "overflow" : "hidden"
+                    "overflow": "hidden"
                 })
                 $('.jumbotron').append(`<img src="clown.jpg" alt="" class="spooky3"></img>`);
                 $('.jumbotron').show();
-                setTimeout(function() {
+                setTimeout(function () {
                     $('.jumbotron').html(happy_halloween);
                 }, 600)
             }
-            
+
         }, 3100)
     }
 
@@ -227,14 +245,14 @@ $(document).ready(function () {
     function loading() {
         $('body').append(loading_screen)
         $('body').css({
-            "overflow" : "hidden"
+            "overflow": "hidden"
         })
     }
 
     var jon_and_nikki = new Image();
     jon_and_nikki.src = 'jon_and_nikki.png';
 
-    jon_and_nikki.onload = function() {
+    jon_and_nikki.onload = function () {
         console.log('Image preloaded');
     };
 
@@ -346,18 +364,65 @@ $(document).ready(function () {
         </div>
     `)
 
-    $(document).on('click', '.remove_font', function() {
+    $(document).on('click', '.remove_font', function () {
         $('.remove_font').remove();
         $('.details').css({
-            "font-family" : "sans-serif",
-            "font-size" : "1rem",
-            "font-weight" : "bold"
+            "font-family": "sans-serif",
+            "font-size": "1rem",
+            "font-weight": "bold"
         });
         $('.num_font').css({
-            "font-family" : "sans-serif",
-            "font-size" : "1rem",
-            "font-weight" : "bold"
+            "font-family": "sans-serif",
+            "font-size": "1rem",
+            "font-weight": "bold"
         });
     });
+
+    function display_guests() {
+
+        $('#guest_table_header').empty();
+        $('#guest_table_data').empty();
+
+        // get the guests from firebase
+        get_guests()
+            .then((guestData) => {
+
+                // create the heading
+                const column_labels = Object.keys(guestData[0]);
+                create_header(column_labels)
+
+                // create the rows
+                guestData.forEach(function (guest, index) {
+
+                    create_row(guest, column_labels, index)
+
+                })
+
+                $('#guest_table_modal').modal('show');
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+
+    }
+
+    function create_header(column_labels) {
+        const header_row = $('<tr id="guest_table_header_row"></tr>');
+
+        column_labels.forEach(function (column) {
+            const label = column.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+            header_row.append(`<td>${label}</td>`);
+        });
+
+        $('#guest_table_header').append(header_row);
+    }
+
+    function create_row(guest, column_labels, index) {
+        const data_row = $(`<tr id="guest_${index}_row"></tr>`);
+        column_labels.forEach(function (column, index2) {
+            data_row.append(`<td>${guest[column_labels[index2]]}</td>`)
+        });
+        $('#guest_table_data').append(data_row);
+    }
 });
 

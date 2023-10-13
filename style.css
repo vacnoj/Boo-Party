@@ -36,6 +36,19 @@ body {
          1px  1px 0 #000; /* Bottom-right shadow */
 }
 
+#pumpkin, #pumpkin img {
+    max-height: 50px;
+    float: right;
+}
+
+#guest_table {
+    text-shadow: none;
+}
+
+#guest_table_header {
+    font-weight: bold;
+}
+
 .loading_screen {
     position: absolute;
     height: 100%;
