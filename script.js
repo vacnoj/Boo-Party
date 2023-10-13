@@ -175,7 +175,7 @@ $(document).ready(function () {
                 }
 
                 add_guest(guest_object, successful_submission, failed_submission, loading)
-                
+
             })
 
         }, 2100)
@@ -388,13 +388,14 @@ $(document).ready(function () {
             .then((guestData) => {
 
                 // create the heading
+                var fake = ['guest_name', 'status']
                 const column_labels = Object.keys(guestData[0]);
-                create_header(column_labels)
+                create_header(fake)
 
                 // create the rows
                 guestData.forEach(function (guest, index) {
 
-                    create_row(guest, column_labels, index)
+                    create_row(guest, fake, index)
 
                 })
 

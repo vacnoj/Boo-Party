@@ -43,10 +43,24 @@ body {
 
 #guest_table {
     text-shadow: none;
+    border-radius: .3rem;
 }
 
 #guest_table_header {
     font-weight: bold;
+}
+
+.modal-footer, #guest_table_modal_content, #guest_table {
+    border: none;
+    margin: 0;
+}
+
+#guest_table_modal_content {
+    background-color: transparent;
+}
+
+.table-dark td, .table-dark th, .table-dark thead th {
+    border-top: none;
 }
 
 .loading_screen {
