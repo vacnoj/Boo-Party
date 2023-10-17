@@ -165,13 +165,15 @@ $(document).ready(function () {
             $('#done_btn').click(function () {
 
                 notes = $('#notes').val();
+                var submission_date = new Date();
 
                 var guest_object = {
                     "guest_name": guest_name,
                     "status": status,
                     "party_size": party_size,
                     "bringing": bringing,
-                    "notes": notes
+                    "notes": notes,
+                    "date" : submission_date
                 }
 
                 add_guest(guest_object, successful_submission, failed_submission, loading)
@@ -265,7 +267,7 @@ $(document).ready(function () {
             <div class="details">
                 <p>Date: <span class="num_font">Saturday October 28th 2023</span></p>
                 <p>Time: <span class="num_font">6:00 PM</span></p>
-                <p>Location: <span class="num_font">24 SUNLIGHT LANE, BAILEY CO, 80241</span></p>
+                <p>Location: <span class="num_font">24 SUNLIGHT LANE, BAILEY CO, 80421</span></p>
             </div>
             <a class="remove_font">Get regular font</a>
         `)
