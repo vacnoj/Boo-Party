@@ -27,6 +27,8 @@ $(document).ready(function () {
     var notes = "";
     var floating = false;
     var pulled_guests = false;
+    var going = 0;
+    var not_going = 0;
 
     $('#bat_img').click(function () {
 
@@ -390,18 +392,40 @@ $(document).ready(function () {
             .then((guestData) => {
 
                 // create the heading
-                var fake = ['guest_name', 'status']
+                var fake = ['guest_name', 'status', 'party_size']
                 const column_labels = Object.keys(guestData[0]);
                 create_header(fake)
+
+                guestData.sort(function (a, b) {
+                    return a.status.localeCompare(b.status);
+                  });
 
                 // create the rows
                 guestData.forEach(function (guest, index) {
 
-                    create_row(guest, fake, index)
+                    create_row(guest, fake, index);
+
+                    if (guest.status === "Going") {
+                        going += parseInt(guest.party_size);
+                    } else {
+                        not_going++;
+                    }
 
                 })
 
                 $('#guest_table_modal').modal('show');
+
+                $('#guest_table_modal_content').prepend(`
+                    <div class="row center">
+                        <div class="col-6">
+                            <h5 id="going">Going: ${going}</h5>
+                        </div>
+                        <div class="col-6">
+                            <h5 id="not_going">Not Going: ${not_going}</h5>
+                        </div>
+                    </div>
+                `)
+
             })
             .catch((error) => {
                 console.error("Error:", error);
